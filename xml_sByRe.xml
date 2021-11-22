@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<all>
+	<Wednesday type="dict">
+		<Lesson1 type="dict">
+			<Time type="str">08:20-09:50</Time>
+			<Week type="str">all</Week>
+			<Room type="str">3407А</Room>
+			<Place type="str">ул.Ломоносова, д.9, лит. E</Place>
+			<Subject type="str">МАТЕМАТИКА(ПРАК)</Subject>
+			<Teacher type="str">Книга Екатерина Викторовна</Teacher>
+			<Format type="str">Очно - дистанционный</Format>
+		</Lesson1>
+		<Lesson2 type="dict">
+			<Time type="str">10:00-11:30</Time>
+			<Week type="str">all</Week>
+			<Room type="str">1222</Room>
+			<Place type="str">ул.Ломоносова, д.9, лит. M</Place>
+			<Subject type="str">МАТЕМАТИКА(ЛЕК)</Subject>
+			<Teacher type="str">Ершова Юлия Юрьевна</Teacher>
+			<Format type="str">Очно - дистанционный</Format>
+		</Lesson2>
+	</Wednesday>
+</all>
