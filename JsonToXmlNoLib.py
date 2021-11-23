@@ -1,4 +1,6 @@
+import time
 f =open("json_s.json", "r",encoding='UTF-8')
+start_time = time.perf_counter()
 txt = f.readline()
 content =list()
 tags    =list()
@@ -28,57 +30,29 @@ for a in content:
             flag.append(len(types)-1)
             InFo.append("")
 with open("xml_sNoLib.xml", "w",encoding='UTF-8') as m:
-    m.write("<?xml version=\"1.0\" ?>\n")
-    m.write("<all>\n")
+    m.write("<?xml version=\"1.0\" ?>\n+<all>\n")
     for a in range(1,lines-1-len(flag)):
         if(types[a-1]=="dict"):
             if(index!=0 and index!=-1):
-                m.write("\t\t</")
-                m.write(tags[flag[count+1]])
-                m.write(">\n")
+                m.write("\t\t</"+tags[flag[count+1]]+">\n\t\t<"+tags[a-1]+" type=\""+types[a-1]+"\">\n")
                 count+=1
-                m.write("\t\t<")
-                m.write(tags[a-1])
-                m.write(" type=\"")
-                m.write(types[a-1])
-                m.write("\">\n")
                 index= a-1
             elif index==-1:
-                m.write("\t\t<")
-                m.write(tags[a-1])
-                m.write(" type=\"")
-                m.write(types[a-1])
-                m.write("\">\n")
+                m.write("\t\t<"+tags[a-1]+" type=\""+types[a-1]+"\">\n")
                 index= a-1   
             else:
-                m.write("\t<")
-                m.write(tags[a-1])
-                m.write(" type=\"")
-                m.write(types[a-1])
-                m.write("\">\n")
+                m.write("\t<"+tags[a-1]+" type=\""+types[a-1]+"\">\n")
                 index=-1
         else:
-            m.write("\t\t\t<")
-            m.write(tags[a-1])
-            m.write(" type=\"")
-            m.write(types[a-1])
-            m.write("\"")
-            m.write(">")
-            m.write(InFo[a-1])
-            m.write("</")
-            m.write(tags[a-1])
-            m.write(">\n")
+            m.write("\t\t\t<"+tags[a-1]+" type=\""+types[a-1]+"\"+>"+InFo[a-1]+"</"+tags[a-1]+">\n")
     tempC=count
     for ind in range (tempC,len(flag)):
         if(ind ==len(flag)-1):
-            m.write("\t</")
-            m.write(tags[flag[0]])
-            m.write(">\n")
+            m.write("\t</"+tags[flag[0]]+">\n")
         else:
-            m.write("\t\t</")
-            m.write(tags[flag[count+1]])
-            m.write(">\n")
+            m.write("\t\t</"+tags[flag[count+1]]+">\n")
         count+=1
     m.write("</all>")
 m.close()
 f.close()
+print(time.perf_counter() - start_time)
