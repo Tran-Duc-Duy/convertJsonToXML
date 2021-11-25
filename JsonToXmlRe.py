@@ -10,6 +10,7 @@ f =open("json_s.json", "r",encoding='UTF-8')
 start_time = time.perf_counter()
 txt = f.read()
 
+#find dict
 pattern = '\".+\"\:\s\{'
 tagDict = re.findall(pattern,txt)
 for i in range(len(tagDict)):
