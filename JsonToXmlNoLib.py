@@ -51,7 +51,7 @@ with open("xml_sNoLib.xml", "w",encoding='UTF-8') as m:
                 m.write("\t<"+tags[a-1]+" type=\""+types[a-1]+"\">\n")
                 index=-1 # index =-1 
         else: # type = str
-            m.write("\t\t\t<"+tags[a-1]+" type=\""+types[a-1]+"\"+>"+InFo[a-1]+"</"+tags[a-1]+">\n")
+            m.write("\t\t\t<"+tags[a-1]+" type=\""+types[a-1]+"\">"+InFo[a-1]+"</"+tags[a-1]+">\n")
     tempC=count #count изменится
     for ind in range (tempC,len(flag)):
         if(ind ==len(flag)-1):
